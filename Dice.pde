@@ -36,12 +36,37 @@ class Die //models one single dice cube
 	void roll()
 	{
 		int dots=(int)(Math.random()*6)+1;
+		int dotSize=mySiz/10;
 		System.out.println(dots);
 		if(dots==1){
 			fill(0);
-			ellipse((myX+mySiz/2), (myY+mySiz/2), (mySiz/10), (mySiz/10));
+			ellipse((myX+mySiz/2), (myY+mySiz/2), (dotSize), (dotSize));
+		}else if(dots==2){
+				fill(0);
+				ellipse(myX+(mySiz/4), myY+(mySiz/4), dotSize, dotSize);
+				ellipse(myX+(mySiz*3/4), myY+(mySiz*3/4), dotSize, dotSize);
+		}else if(dots==3){
+				fill(0);
+				ellipse(myX+(mySiz/4), myY+(mySiz/4), dotSize, dotSize);
+				ellipse(myX+(mySiz*2/4), myY+(mySiz*2/4), dotSize, dotSize);
+				ellipse(myX+(mySiz*3/4), myY+(mySiz*3/4), dotSize, dotSize);
+		}else if(dots==4){
+			for(int x1=mySiz/4; x1 <= mySiz*3/4; x1+=mySiz/2){
+				for(int y1=mySiz/4; y1 <= mySiz*3/4; y1+=mySiz/2){
+					fill(0);
+					ellipse(myX+x1, myY+y1, dotSize, dotSize);
+				}
+			}
 		}
-
+		else if(dots==5){
+			for(int x1=mySiz/4; x1 <= mySiz*3/4; x1+=mySiz/2){
+				for(int y1=mySiz/4; y1 <= mySiz*3/4; y1+=mySiz/2){
+					fill(0);
+					ellipse(myX+x1, myY+y1, dotSize, dotSize);
+				}
+			}
+			ellipse(myX+(mySiz/2), myY+(mySiz/2), dotSize, dotSize);
+		}
 	}
 	void show()
 	{
