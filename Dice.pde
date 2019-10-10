@@ -7,9 +7,15 @@ void draw()
 {
 	background(200,200,200);
 	int sum = 0;
+	int r;
+	int g;
+	int b;
 	for(int i = 25; i<325; i+=125){
 		for(int j = 25; j<325; j+=125){
-			Die alpha = new Die(j,i,100,255,255,255);
+			r=(int)(Math.random()*256);
+			g=(int)(Math.random()*256);
+			b=(int)(Math.random()*256);
+			Die alpha = new Die(j,i,100,r,g,b);
 			alpha.show();
 			alpha.roll();
 			sum+=alpha.dots;
